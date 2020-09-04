@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2020-09-04T06:27:13Z</date>
+    <groups>
+        <group>
+            <name>Templates/Applications</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>jenkins-metrics</template>
+            <name>jenkins metrics</name>
+            <groups>
+                <group>
+                    <name>Templates/Applications</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Jenkins Build Metrics</name>
+                </application>
+                <application>
+                    <name>Jenkins specific metrics</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Job Count Value</name>
+                    <key>jenkins.metrics[gauges.jenkins.job.count.value.value]</key>
+                    <applications>
+                        <application>
+                            <name>Jenkins specific metrics</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Unstable Rate (mean)</name>
+                    <key>jenkins.metrics[meters.jenkins.runs.unstable.mean_rate]</key>
+                    <value_type>FLOAT</value_type>
+                    <units>events/minute</units>
+                    <applications>
+                        <application>
+                            <name>Jenkins Build Metrics</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
