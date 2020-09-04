@@ -1,0 +1,16 @@
+timers.jenkins.job.execution.time.m15_rate=0.0
+timers.jenkins.job.execution.time.m1_rate=0.0
+timers.jenkins.job.execution.time.m5_rate=0.0
+timers.jenkins.job.execution.time.max=0.0
+timers.jenkins.job.execution.time.mean=0.0
+timers.jenkins.job.execution.time.mean_rate=0.0
+timers.jenkins.job.execution.time.min=0.0
+timers.jenkins.job.execution.time.p50=0.0
+timers.jenkins.job.execution.time.p75=0.0
+timers.jenkins.job.execution.time.p95=0.0
+timers.jenkins.job.execution.time.p98=0.0
+timers.jenkins.job.execution.time.p99=0.0
+timers.jenkins.job.execution.time.p999=0.0
+timers.jenkins.job.execution.time.rate_units=calls/minute
+timers.jenkins.job.execution.time.stddev=0.0
+timers.jenkins.job.execution.time.values=[]
