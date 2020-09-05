@@ -7,6 +7,7 @@ b5="1m"
 b6="5m"
 b7="15m"
 b8="1h"
+b9="histogram"
 
 
 
@@ -16,7 +17,7 @@ do
     application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
     metric=`echo $line | cut -d "=" -f 1`
     name=`echo $line | cut -d "." -f 4,5 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
-    if  echo $line | egrep "$b(seq 1 8)"   > /dev/null
+    if  echo $line | egrep "$b1|$b2|$b3|$b4|$b5|$b6|$b7|$b8|$b9"   > /dev/null
     then
 	    continue
     elif  echo $line | grep "\.rate" | grep "mean" > /dev/null
@@ -24,14 +25,14 @@ do
 	    units=`grep $(echo $line | cut -d "." -f 1,2,3,4,5) $1 | grep unit | cut -d "=" -f 2` 
 	    vtype="FLOAT"
 	    name_addition=" (mean rate)"
-    elif echo $line | grep count > /dev/null
+    elif echo $line | grep "count" > /dev/null
     then
 	    vtype=""
 	    units=""
 	    name_addition=""
-	    if echo $line | grep count | grep duration > /dev/null
+	    if echo $line | grep "duration" > /dev/null
 	    then
-		    unist="seconds"
+		    units="seconds"
             fi
     elif echo $line | grep mean_rate > /dev/null
     then
