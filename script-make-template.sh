@@ -10,7 +10,7 @@
 
 ## The following Variables will determine which keywords to be ignored in the metrics file
 b1="units="
-b2="value"
+b2="version"
 b3="m1"
 b4="m5"
 b5="1m"
@@ -19,37 +19,57 @@ b7="15m"
 b8="1h"
 b9="histogram"
 
-
 function extract_items {
 while IFS= read -r line 
 	do
-    		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
-    		metric=`echo $line | cut -d "=" -f 1`
-    		name=`echo $line | cut -d "." -f 4,5 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g" | cut -d "=" -f 1`
+    	application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+    	metric=`echo $line | cut -d "=" -f 1`
+    	name=`echo $line | cut -d "." -f 4,5 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g" | cut -d "=" -f 1`
 		if  echo $line | egrep "$b1|$b2|$b3|$b4|$b5|$b6|$b7|$b8|$b9"   > /dev/null
 		then
-    			continue
+    		continue
 		elif [ `echo $line |  grep -o "\." | wc -l` -eq 3 ] 
 		then
-   			units="" 
-	    		vtype=""
+			units="" 
+	    	vtype=""
 			name_addition=""
-       			application=`echo $line | cut -d "." -f 1 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
-	    		metric=`echo $line | cut -d "=" -f 1`
-       			name=`echo $line | cut -d "." -f 2,3  | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+       		application=`echo $line | cut -d "." -f 1 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+	    	metric=`echo $line | cut -d "=" -f 1`
+       		name=`echo $line | cut -d "." -f 2,3  | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+		elif echo $line | grep "gauge"  
+		then
+			units="" 
+    		vtype=""
+			name_addition=""
+	    	metric=`echo $line | cut -d "=" -f 1`
+			if [ `echo $line |  grep -o "\." | wc -l` -eq 4 ]
+			then
+	       		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+    	   		name=`echo $line | cut -d "." -f 3,4  | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+			elif [ `echo $line |  grep -o "\." | wc -l` -eq 5 ]
+			then
+	       		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+    	   		name=`echo $line | cut -d "." -f 3,4,5  | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+			fi
+			units="" 
+    		vtype=""
+			name_addition=""
+       		application=`echo $line | cut -d "." -f 1 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+	    	metric=`echo $line | cut -d "=" -f 1`
+
 		elif  echo $line | grep "\.rate" | grep "mean" > /dev/null
 		then
    			units=`grep $(echo $line | cut -d "." -f 1,2,3,4,5) $1 | grep unit | cut -d "=" -f 2` 
 	   		vtype="FLOAT"
-    			name_addition=" (mean rate)"
+    		name_addition=" (mean rate)"
 		elif echo $line | grep "count" > /dev/null
 		then
-    			vtype=""
-    			units=""
-    			name_addition=""
-   		if echo $line | grep "duration" > /dev/null
+    		vtype=""
+    		units=""
+    		name_addition=""
+   			if echo $line | grep "duration" > /dev/null
 	    	then
-			units="seconds"
+				units="seconds"
        		fi
 		elif echo $line | grep mean_rate > /dev/null
 		then
@@ -57,7 +77,7 @@ while IFS= read -r line
     			units="seconds"
     			name_addition=" (mean)"
 		else
-    			continue
+    		continue
 		fi
 		echo "            <item>
                 <name>$name$name_addition</name>
