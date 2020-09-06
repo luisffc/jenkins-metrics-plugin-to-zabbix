@@ -111,7 +111,7 @@ function extract_applications {
 	cat /tmp/application_temp | sort -u | grep -v "0" > /tmp/application_temp1
 	while IFS= read -r application 
 	do
-		echo "                <applicatin>
+		echo "                <application>
                     <name>$application</name>
                 </application>"
 	done < /tmp/application_temp1
