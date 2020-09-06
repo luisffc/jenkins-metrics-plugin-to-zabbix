@@ -22,8 +22,9 @@ b9="histogram"
 function extract_items {
 while IFS= read -r line 
 	do
-    	application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
-    	metric=`echo $line | cut -d "=" -f 1`
+    	line=`echo $line | cut -d "=" -f 1`
+		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+    	metric=$line
     	name=`echo $line | cut -d "." -f 4,5 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g" | cut -d "=" -f 1`
 		if  echo $line | egrep "$b1|$b2|$b3|$b4|$b5|$b6|$b7|$b8|$b9"   > /dev/null
 		then
@@ -34,14 +35,13 @@ while IFS= read -r line
 	    	vtype=""
 			name_addition=""
        		application=`echo $line | cut -d "." -f 1 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
-	    	metric=`echo $line | cut -d "=" -f 1`
        		name=`echo $line | cut -d "." -f 2,3  | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
-		elif echo $line | grep "gauge"  
+# gauge monitoring parameters
+		elif echo $line | grep "gauge" > /dev/null
 		then
 			units="" 
     		vtype=""
 			name_addition=""
-	    	metric=`echo $line | cut -d "=" -f 1`
 			if [ `echo $line |  grep -o "\." | wc -l` -eq 4 ]
 			then
 	       		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
@@ -50,13 +50,13 @@ while IFS= read -r line
 			then
 	       		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
     	   		name=`echo $line | cut -d "." -f 3,4,5  | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+			elif [ `echo $line |  grep -o "\." | wc -l` -eq 6 ]
+			then
+				application=`echo $line | cut -d "." -f 2,3,4 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+    	   		name=`echo $line | cut -d "." -f 5,6  | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+			else
+				continue
 			fi
-			units="" 
-    		vtype=""
-			name_addition=""
-       		application=`echo $line | cut -d "." -f 1 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
-	    	metric=`echo $line | cut -d "=" -f 1`
-
 		elif  echo $line | grep "\.rate" | grep "mean" > /dev/null
 		then
    			units=`grep $(echo $line | cut -d "." -f 1,2,3,4,5) $1 | grep unit | cut -d "=" -f 2` 
@@ -98,10 +98,10 @@ function extract_applications {
 	> /tmp/application_temp
 	while IFS= read -r line 
 	do
-    		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
+   		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
 		if  echo $line | egrep "$b1|$b2|$b3|$b4|$b5|$b6|$b7|$b8|$b9"   > /dev/null
 		then
-    			continue
+   			continue
 		elif [ `echo $line |  grep -o "\." | wc -l` -eq 3 ] 
 		then
    			application=`echo $line | cut -d "." -f 1 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
