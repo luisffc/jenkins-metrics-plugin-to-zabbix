@@ -79,17 +79,17 @@ while IFS= read -r line
 		else
     		continue
 		fi
-		echo "            <item>
-                <name>$name$name_addition</name>
-                <key>jenkins.metrics[$metric]</key>
-                <value_type>$vtype</value_type>
-                <units>$units</units>
-                <applications>
-                    <application>
-                        <name>$application</name>
-                    </application>
-                </applications>
-            </item>"
+		echo "				<item>
+                	<name>$name$name_addition</name>
+                	<key>jenkins.metrics[$metric]</key>
+                	<value_type>$vtype</value_type>
+                	<units>$units</units>
+                	<applications>
+                    	<application>
+                        	<name>$application</name>
+                    	</application>
+                	</applications>
+            	</item>"
 	done < $1
 }
 
@@ -144,6 +144,7 @@ EOF
 extract_applications $1
 cat << EOF
             </applications>
+			<items>
 EOF
 extract_items $1
 cat << EOF
@@ -153,5 +154,6 @@ cat << EOF
 </zabbix_export>
 EOF
 }
+
 
 make_output $1
