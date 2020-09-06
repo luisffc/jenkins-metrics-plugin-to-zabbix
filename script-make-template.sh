@@ -26,22 +26,19 @@ while IFS= read -r line
 		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
     	metric=$line
     	name=`echo $line | cut -d "." -f 4,5 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g" | cut -d "=" -f 1`
+		units=0 
+	    vtype=0
+		name_addition=0
 		if  echo $line | egrep "$b1|$b2|$b3|$b4|$b5|$b6|$b7|$b8|$b9"   > /dev/null
 		then
     		continue
 		elif [ `echo $line |  grep -o "\." | wc -l` -eq 3 ] 
 		then
-			units="" 
-	    	vtype=""
-			name_addition=""
        		application=`echo $line | cut -d "." -f 1 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
        		name=`echo $line | cut -d "." -f 2,3  | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
 # gauge monitoring parameters
 		elif echo $line | grep "gauge" > /dev/null
 		then
-			units="" 
-    		vtype=""
-			name_addition=""
 			if [ `echo $line |  grep -o "\." | wc -l` -eq 4 ]
 			then
 	       		application=`echo $line | cut -d "." -f 2,3 | sed 's/\./ /g' | sed -e "s/\b\(.\)/\u\1/g"`
@@ -64,9 +61,6 @@ while IFS= read -r line
     		name_addition=" (mean rate)"
 		elif echo $line | grep "count" > /dev/null
 		then
-    		vtype=""
-    		units=""
-    		name_addition=""
    			if echo $line | grep "duration" > /dev/null
 	    	then
 				units="seconds"
@@ -81,10 +75,16 @@ while IFS= read -r line
 		fi
 		echo "				<item>
                 	<name>$name$name_addition</name>
-                	<key>jenkins.metrics[$metric]</key>
-                	<value_type>$vtype</value_type>
-                	<units>$units</units>
-                	<applications>
+                	<key>jenkins.metrics[$metric]</key>"
+		if [ $vtype -ne 0 ]
+		then
+            echo "					<value_type>$vtype</value_type>"
+        fi
+		if [ $units -ne 0 ]
+		then
+		    echo "					<units>$units</units>"
+		fi
+		echo "					<applications>
                     	<application>
                         	<name>$application</name>
                     	</application>
