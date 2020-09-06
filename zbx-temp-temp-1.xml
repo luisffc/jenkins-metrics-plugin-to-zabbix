@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2020-09-04T06:27:13Z</date>
+    <groups>
+        <group>
+            <name>Templates/Applications</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>jenkins-metrics</template>
+            <name>Jenkins Metrics</name>
+            <groups>
+                <group>
+                    <name>Templates/Applications</name>
+                </group>
+            </groups>
+            <applications>
+                <applicatin>
+                    <name>Counters</name>
+                </application>
+                <applicatin>
+                    <name>Http Requests</name>
+                </application>
+                <applicatin>
+                    <name>Http ResponseCodes</name>
+                </application>
+                <applicatin>
+                    <name>Jenkins Health-Check</name>
+                </application>
+                <applicatin>
+                    <name>Jenkins Job</name>
+                </application>
+                <applicatin>
+                    <name>Jenkins Runs</name>
+                </application>
+                <applicatin>
+                    <name>Jenkins Task</name>
+                </application>
+                <applicatin>
+                    <name>Timers</name>
+                </application>
+            </applications>
+            <item>
+                <name>Http ActiveRequests</name>
+                <key>jenkins.metrics[counters.http.activeRequests.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Counters</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>BadRequest Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.badRequest.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>BadRequest Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.badRequest.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Created Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.created.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Created Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.created.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Forbidden Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.forbidden.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Forbidden Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.forbidden.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>NoContent Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.noContent.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>NoContent Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.noContent.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>NotFound Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.notFound.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>NotFound Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.notFound.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>NotModified Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.notModified.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>NotModified Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.notModified.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Ok Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.ok.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Ok Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.ok.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Other Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.other.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Other Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.other.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>ServerError Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.serverError.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>ServerError Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.serverError.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>ServiceUnavailable Count</name>
+                <key>jenkins.metrics[meters.http.responseCodes.serviceUnavailable.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>ServiceUnavailable Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.http.responseCodes.serviceUnavailable.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http ResponseCodes</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Scheduled Count</name>
+                <key>jenkins.metrics[meters.jenkins.job.scheduled.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Scheduled Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.jenkins.job.scheduled.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Aborted Count</name>
+                <key>jenkins.metrics[meters.jenkins.runs.aborted.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Aborted Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.jenkins.runs.aborted.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Failure Count</name>
+                <key>jenkins.metrics[meters.jenkins.runs.failure.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Failure Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.jenkins.runs.failure.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Not_built Count</name>
+                <key>jenkins.metrics[meters.jenkins.runs.not_built.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Not_built Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.jenkins.runs.not_built.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Success Count</name>
+                <key>jenkins.metrics[meters.jenkins.runs.success.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Success Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.jenkins.runs.success.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Total Count</name>
+                <key>jenkins.metrics[meters.jenkins.runs.total.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Total Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.jenkins.runs.total.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Unstable Count</name>
+                <key>jenkins.metrics[meters.jenkins.runs.unstable.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Unstable Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.jenkins.runs.unstable.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Runs</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Scheduled Count</name>
+                <key>jenkins.metrics[meters.jenkins.task.scheduled.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Scheduled Mean_rate (mean)</name>
+                <key>jenkins.metrics[meters.jenkins.task.scheduled.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Http Requests</name>
+                <key>jenkins.metrics[timers.http.requests.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Timers</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Mean_rate (mean)</name>
+                <key>jenkins.metrics[timers.http.requests.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Http Requests</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Duration Count</name>
+                <key>jenkins.metrics[timers.jenkins.health-check.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Health-Check</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Duration Mean_rate (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.health-check.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Health-Check</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Blocked Duration</name>
+                <key>jenkins.metrics[timers.jenkins.job.blocked.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Blocked Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.job.blocked.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Buildable Duration</name>
+                <key>jenkins.metrics[timers.jenkins.job.buildable.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Buildable Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.job.buildable.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Building Duration</name>
+                <key>jenkins.metrics[timers.jenkins.job.building.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Building Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.job.building.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Execution Time</name>
+                <key>jenkins.metrics[timers.jenkins.job.execution.time.count]</key>
+                <value_type></value_type>
+                <units></units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Execution Time (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.job.execution.time.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Queuing Duration</name>
+                <key>jenkins.metrics[timers.jenkins.job.queuing.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Queuing Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.job.queuing.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Total Duration</name>
+                <key>jenkins.metrics[timers.jenkins.job.total.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Total Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.job.total.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Waiting Duration</name>
+                <key>jenkins.metrics[timers.jenkins.job.waiting.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Waiting Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.job.waiting.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Job</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Blocked Duration</name>
+                <key>jenkins.metrics[timers.jenkins.task.blocked.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Blocked Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.task.blocked.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Buildable Duration</name>
+                <key>jenkins.metrics[timers.jenkins.task.buildable.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Buildable Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.task.buildable.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Execution Duration</name>
+                <key>jenkins.metrics[timers.jenkins.task.execution.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Execution Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.task.execution.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Queuing Duration</name>
+                <key>jenkins.metrics[timers.jenkins.task.queuing.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Queuing Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.task.queuing.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Waiting Duration</name>
+                <key>jenkins.metrics[timers.jenkins.task.waiting.duration.count]</key>
+                <value_type></value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            <item>
+                <name>Waiting Duration (mean)</name>
+                <key>jenkins.metrics[timers.jenkins.task.waiting.duration.mean_rate]</key>
+                <value_type>FLOAT</value_type>
+                <units>seconds</units>
+                <applications>
+                    <application>
+                        <name>Jenkins Task</name>
+                    </application>
+                </applications>
+            </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
