@@ -1,8 +1,0 @@
-Jenkins Job-meters.jenkins.job.scheduled.mean_rate-Job Scheduled 
-Jenkins Run-meters.jenkins.runs.aborted.mean_rate-Runs Aborted
-Jenkins Run-meters.jenkins.runs.failure.mean_rate-Runs Failure
-Jenkins Run-meters.jenkins.runs.not_built.mean_rate-Runs Not Built
-Jenkins Run-meters.jenkins.runs.success.mean_rate-Runs Success
-Jenkins Run-meters.jenkins.runs.total.mean_rate-Runs Total
-Jenkins Run-meters.jenkins.runs.unstable.mean_rate-Runs Ustable
-Jenkins Run-meters.jenkins.task.scheduled.mean_rate-Task Scheduled
