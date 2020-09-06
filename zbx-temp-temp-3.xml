@@ -17,91 +17,91 @@
                 </group>
             </groups>
             <applications>
-                <applicatin>
+                <application>
                     <name>Counters</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Gauges</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Http Requests</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Http ResponseCodes</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Jenkins Executor</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Jenkins Health-Check</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Jenkins Job</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Jenkins Node</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Jenkins Plugins</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Jenkins Project</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Jenkins Queue</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Jenkins Runs</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Jenkins Task</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>System Cpu</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Timers</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Blocked</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Class</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Cpu</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Daemon</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Deadlock</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm File</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Gc</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Memory</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm New</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Runnable</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Terminated</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Timed_waiting</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Uptime</name>
                 </application>
-                <applicatin>
+                <application>
                     <name>Vm Waiting</name>
                 </application>
             </applications>
